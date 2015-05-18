@@ -99,6 +99,15 @@
 #define AID_SENSORS       3011 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 #define AID_IMS           3012  /* can read/write /dev/socket/imsrtp */
 
+#if defined(LGEJPN_UIDS)
+#define AID_LGEJPN_FELICA_MFM        4004 /*  */
+#define AID_LGEJPN_FELICA_MFS        4005 /*  */
+#define AID_LGEJPN_FELICA_MFW        4006 /*  */
+#define AID_LGEJPN_FELICA_FELICALOCK 4007 /*  */
+#define AID_LGEJPN_FELICA            4009 /*  */
+#define AID_LGEJPN_FELICA_MFC        4267 /*  */
+#endif
+
 #if defined(MOTOROLA_UIDS)
 #define AID_MOT_OSH       5000  /* OSH */
 #define AID_MOT_ACCY      9000  /* access to accessory */
@@ -193,6 +202,16 @@ static const struct android_id_info android_ids[] = {
     { "qcom_diag", AID_QCOM_DIAG, },
     { "ims", AID_IMS, },
     { "net_bt_stack",  AID_NET_BT_STACK, },
+
+#if defined(LGEJPN_UIDS)
+    { "mfm",   AID_LGEJPN_FELICA_MFM       , },
+    { "mfs",   AID_LGEJPN_FELICA_MFS       , },
+    { "mfw",   AID_LGEJPN_FELICA_MFW       , },
+    { "felicalock",   AID_LGEJPN_FELICA_FELICALOCK, },
+    { "felica",   AID_LGEJPN_FELICA           , },
+    { "mfc",   AID_LGEJPN_FELICA_MFC           , },
+
+#endif
 
 #if defined(MOTOROLA_UIDS)
     { "mot_osh",   AID_MOT_OSH, },
