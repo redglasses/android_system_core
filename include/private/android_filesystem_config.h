@@ -104,6 +104,15 @@
 #define AID_SENSORS       3011 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 #endif
 
+#if defined(LGEJPN_UIDS)
+#define AID_LGEJPN_FELICA_MFM        4004 /*  */
+#define AID_LGEJPN_FELICA_MFS        4005 /*  */
+#define AID_LGEJPN_FELICA_MFW        4006 /*  */
+#define AID_LGEJPN_FELICA_FELICALOCK 4007 /*  */
+#define AID_LGEJPN_FELICA            4009 /*  */
+#define AID_LGEJPN_FELICA_MFC        4267 /*  */
+#endif
+
 #define AID_EVERYBODY     9997  /* shared between all apps in the same profile */
  
 #define AID_MISC          9998  /* access to misc storage */
@@ -192,6 +201,14 @@ static const struct android_id_info android_ids[] = {
     { "qcom_diag", AID_QCOM_DIAG, },
 #if !defined(QCOM_LEGACY_UIDS)
     { "sensors",       AID_SENSORS, },
+#endif
+#if defined(LGEJPN_UIDS)
+    { "mfm",           AID_LGEJPN_FELICA_MFM, },
+    { "mfs",           AID_LGEJPN_FELICA_MFS, },
+    { "mfw",           AID_LGEJPN_FELICA_MFW, },
+    { "felicalock",    AID_LGEJPN_FELICA_FELICALOCK, },
+    { "felica",        AID_LGEJPN_FELICA, },
+    { "mfc",           AID_LGEJPN_FELICA_MFC, },
 #endif
     { "everybody",     AID_EVERYBODY, },
     { "misc",          AID_MISC, },
